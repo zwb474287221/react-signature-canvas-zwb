@@ -1,7 +1,7 @@
 declare module "react-signature-canvas-zwb" {
 
   export type CanvasRefAction = {
-    getPicData: (mimetype: string) => string;
+    getPic: (mimetype?: string,quality?:number) => string;
     clear(): void
   }
 

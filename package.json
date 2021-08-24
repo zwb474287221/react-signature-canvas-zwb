@@ -12,6 +12,12 @@
     "type": "git",
     "url": "git+https://github.com/zwb474287221/react-native-thumbnail.git"
   },
+  "keywords": [
+    "react",
+    "react-component",
+    "component",
+    "autograph"
+  ],
   "devDependencies": {
     "@types/react": "*",
     "typescript": "^4.3.5"

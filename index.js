@@ -3,7 +3,7 @@ import React, {forwardRef, useCallback, useEffect, useImperativeHandle, useRef, 
 const Canvas = forwardRef((props, ref) => {
   const [isDown, setIsDown] = useState(false);
 
-  const {width = 100, height = 100, ...other} = props;
+  const {width = 100, height = 100, strokeStyle, lineWidth, ...other} = props;
 
   const canvas = useRef();
   const ctx = useRef();
@@ -25,8 +25,8 @@ const Canvas = forwardRef((props, ref) => {
     ctx.current.putImageData(canvasData, 0, 0, 0, 0, canvasData.width, canvasData.height);
   }, [props.width, props.height, props.strokeStyle, props.lineWidth])
 
-  const getPic = (type) => {
-    return canvas.current.toDataURL(type);
+  const getPic = (...arg) => {
+    return canvas.current.toDataURL(...arg);
   }
 
   const clear = () => {
