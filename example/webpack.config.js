@@ -15,7 +15,6 @@ module.exports = {
             options: {
               presets: [
                 "@babel/preset-env",
-                "@babel/preset-typescript",
                 "@babel/preset-react"
               ],
               // This is a feature of `babel-loader` for webpack (not Babel itself).
@@ -26,25 +25,7 @@ module.exports = {
               cacheCompression: false,
               compact: true,
             },
-          },
-          {
-            test: /\.(js|mjs|jsx|ts|tsx)$/,
-            loader: require.resolve('ts-loader'),
-            options: {
-              presets: [
-                "@babel/preset-env",
-                "@babel/preset-typescript",
-                "@babel/preset-react"
-              ],
-              // This is a feature of `babel-loader` for webpack (not Babel itself).
-              // It enables caching results in ./node_modules/.cache/babel-loader/
-              // directory for faster rebuilds.
-              cacheDirectory: true,
-              // See #6846 for context on why cacheCompression is disabled
-              cacheCompression: false,
-              compact: true,
-            },
-          },
+          }
         ]
       },
     ]
@@ -60,7 +41,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
   },
-  //...
   devServer: {
     hot: true,
   },
