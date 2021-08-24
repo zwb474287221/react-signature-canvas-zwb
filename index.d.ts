@@ -9,6 +9,8 @@ declare module "react-signature-canvas-zwb" {
     width: number;
     height: number;
     style?: any;
+    strokeStyle?:string;
+    lineWidth?:number;
   }
 
   const Canvas: React.ForwardRefRenderFunction<CanvasRefAction, CanvasProps>;
