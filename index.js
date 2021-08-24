@@ -35,7 +35,6 @@ const Canvas = forwardRef((props, ref) => {
 
 
   const touchDrawLine = useCallback((e) => {
-    console.log(e);
     if (e.type === "touchstart") {
       //起始一条路径，或者重绘当前路径
       setIsDown(true);
@@ -54,7 +53,6 @@ const Canvas = forwardRef((props, ref) => {
 
 
   const mouseDrawLine = useCallback((e) => {
-    console.log(e);
     if (e.type === "mousedown") {
       //起始一条路径，或者重绘当前路径
       setIsDown(true);
