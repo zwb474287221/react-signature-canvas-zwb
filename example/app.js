@@ -1,22 +1,23 @@
 import React, {useRef, useState} from "react";
-import Canvas from "./Canvas";
+import Canvas from "react-signature-canvas-zwb";
 
 const App = () => {
   const [height,setHeight]=useState(500);
   const [width,setWidth]=useState(500);
-
+  const [url,setUrl] = useState('');
   const canvas=useRef();
 
-  const strokeRect=()=>{
-    canvas.current.strokeRect(5,5,25,15);
-  }
-
-  const onChange=()=>{
-    canvas.current.scale(2,2);
+  const clear=()=>{
+    canvas.current.clear();
   }
 
   const onSize=()=>{
     setHeight(value=>value+500);
+  }
+
+  const getPic=()=>{
+    const url=canvas.current.getPic();
+    setUrl(url);
   }
 
   const onFull=()=>{
@@ -32,19 +33,22 @@ const App = () => {
         ref={canvas}
         width={width}
         height={height}
+        strokeStyle={'red'}
+        lineWidth={3}
       />
-      <button onClick={onChange}>
-        大小
-      </button>
-      <button onClick={strokeRect}>
-        大小
+      <button onClick={clear}>
+        清除
       </button>
       <button onClick={onSize}>
-        大小
+        改变画布大小
+      </button>
+      <button onClick={getPic}>
+        获取图片
       </button>
       <button onClick={onFull}>
         全屏
       </button>
+      <img src={url} alt={''}/>
     </div>
   );
 }
