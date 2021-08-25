@@ -1,6 +1,6 @@
 {
   "name": "react-signature-canvas-zwb",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "signature canvas",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zwb474287221/react-native-thumbnail.git"
+    "url": "git+https://github.com/zwb474287221/react-signature-canvas-zwb.git"
   },
   "keywords": [
     "react",
